@@ -1,32 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap');
 
-@import 
-url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
-@import
-url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap');
-
-:root{
-    --ff:'Roboto Slab';
+:root {
+    --ff: 'Roboto Slab';
     --ff-t: 'Tinos';
     --ff-s: clamp(1rem, 1.25vw, 1.75rem);
-    --bg-c: #F3D0D0;
+    --bg-c: #f3d0d0;
     scroll-behavior: smooth;
-    --pad: clamp(0.50em, 6vw, 10rem);
-
+    --pad: clamp(0.5em, 6vw, 10rem);
 }
 
 body {
     margin: 0;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-    text-rendering: optimizeLegibility !important;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important; 
-    font-size: var(--ff-s); 
+    -moz-osx-font-smoothing: grayscale !important;
+    font-size: var(--ff-s);
 }
 
-
 ul {
-    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -39,30 +34,33 @@ a:checked,
 a:active {
     font-weight: 600;
     color: #434745;
-   
 }
 
-p, ul, footer {
+p,
+ul,
+footer {
     font-family: var(--ff);
     font-weight: 400;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--ff-t);
 }
 
 #welcome-section {
-  height: 100vh;
+    height: 100vh;
 }
 
 /**NAV**/
 nav {
     background-color: var(--bg-c);
     position: fixed;
-    width: 100%;
-    padding: 0.75em;
-  
-   
+    width: 100vw;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    z-index: 20;
 }
 
 #drp-menu {
@@ -71,21 +69,19 @@ nav {
 }
 
 header {
-  display: grid;
-  align-items: center;
-  padding-left: var(--pad);
-  padding-right: var(--pad);
-  
+    display: grid;
+    align-items: center;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
 }
 
 label {
     display: grid;
 }
 
-label img{
+label img {
     justify-self: end;
     cursor: pointer;
-
 }
 
 #drp-menu:hover,
@@ -93,7 +89,7 @@ label img{
 #drp-menu:checked {
     border-radius: 2px;
     outline: 1px solid rgb(150, 145, 145);
-    padding: 0.30em 0.25em;
+    padding: 0.3em 0.25em;
 }
 
 #menu {
@@ -102,22 +98,22 @@ label img{
 
 #navlist {
     display: none;
-
 }
 
-#menu:checked~#navlist {
+#menu:checked ~ header #navlist {
     display: grid;
-    place-items:  center;
-    text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 86vw;
+    place-items: center;
+    width: 100%;
     line-height: 3;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
+.nav-list {
+    display: grid;
+    justify-items: center;
+}
 /**END-OF-NAV**/
-
-
 
 /**WELCOME SECTION**/
 main {
@@ -130,11 +126,10 @@ main {
     justify-content: center;
     margin-top: 1.5rem;
     align-items: center;
-    
 }
 
 .second-section {
-  margin-top: -3rem;
+    margin-top: -3rem;
 }
 
 h1 {
@@ -155,13 +150,11 @@ h1 {
     height: 250px;
     width: 250px;
     object-fit: cover;
-    
 }
 
 #about {
     display: flex;
     flex-direction: column;
- 
 }
 
 .name {
@@ -174,7 +167,7 @@ p {
 h2 {
     margin-top: -1rem;
     font-weight: 400;
-    color:rgb(97, 91, 91);
+    color: rgb(97, 91, 91);
 }
 
 .btn-view {
@@ -183,7 +176,7 @@ h2 {
     outline: 4px solid var(--bg-c);
     font-family: var(--ff-t);
     border-radius: 1px;
-    padding: 0.25em 0.50em;
+    padding: 0.25em 0.5em;
     font-size: 1rem;
     margin-top: 0.75em;
     margin-bottom: 0.5em;
@@ -202,8 +195,19 @@ h2 {
     margin-top: 3rem;
 }
 
+.project-image-container {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.project-image-container .project-image:hover {
+    transform: scale(1.1);
+}
+
 .project-image {
     max-width: 100%;
+    transition: all 0.5s;
+    z-index: 1;
 }
 
 .project-tile {
@@ -218,17 +222,16 @@ h2 {
     justify-content: center;
     gap: 10px;
     margin-top: -3rem;
-
 }
 
 .project-links {
-    color:rgb(122, 117, 117);
+    color: rgb(122, 117, 117);
     font-size: 0.95rem;
 }
 
 .project-links:hover,
 .project-links:focus {
-    color:rgb(14, 13, 13);
+    color: rgb(14, 13, 13);
 }
 
 .projects {
@@ -245,7 +248,7 @@ h2 {
     font-family: var(--ff-t);
     font-size: 1.75rem;
     font-weight: 700;
-    margin-top: -0.50em;
+    margin-top: -0.5em;
 }
 
 .icons {
@@ -267,51 +270,57 @@ footer {
 
 /**MEDIA QUERIES**/
 @media (min-width: 600px) {
+    .project-image-container {
+        width: 550px;
+    }
 
-nav {
-    height: 20px;
-}
-
-#menu {
-    display: none;
-}
-
-#drp-menu {
-    visibility: hidden;
-}
-
-#navlist {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-   
-}
-
-.nav-list{
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    text-align: right;
-    align-items:  center;
-    margin-right: 4rem;
-    margin-top: -1rem;
-}
-
-}
-
-@media (min-width: 800px) and (max-width: 991px) {
     .project-image {
-        height: 500px;
         width: 100%;
+    }
+
+    nav {
+        padding: 0.25rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header label {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #drp-menu {
+        visibility: hidden;
+    }
+
+    #navlist {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        line-height: 0;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+        padding-right: 4rem;
     }
 }
 
 @media (min-width: 992px) {
-  .second-section {
-    margin-top: 3rem;
-  }
+    .second-section {
+        margin-top: 3rem;
+    }
 
-    #projects, #about, #contact {
+    #projects,
+    #about,
+    #contact {
         padding: 3rem;
     }
 
@@ -341,7 +350,6 @@ nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
-
     }
 
     .separator {
@@ -350,7 +358,5 @@ nav {
 
     footer {
         padding-left: 3rem;
-
     }
-
 }
